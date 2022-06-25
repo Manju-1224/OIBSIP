@@ -1,0 +1,36 @@
+import java.util.Scanner;
+public class NumberGuessing {
+
+	public static void main(String[] args) {
+	   
+		Scanner in = new Scanner(System.in);
+		int num = 1 + (int)(100*Math.random());
+		int guessnum;
+		int count=0;
+		int trials = 10;
+        System.out.println("Welcome to Number Guessing Game!");
+        System.out.println("Guess the Number choosen between 1 and 100 within 10 trials");
+        for(int i=0;i<trials;i++) {
+        	System.out.println("Guess the Number");
+        	guessnum=in.nextInt();
+        	if(num==guessnum) {
+        		System.out.println("Congratulations! The Number you guessed is Right");
+        		break;
+        	}
+        	else if(num>guessnum) {
+        		System.out.println("The Number is greater than " + guessnum + " Try Again!");
+        	}
+        	else if(num<guessnum) {
+        		System.out.println("The Number is less than " + guessnum + " Try Again!");
+        	}
+        }
+        if(count==trials) {
+        	System.out.println("Sorry, You are left with no more trials");
+        	System.out.println("The number was " + num);
+        }
+        
+            in.close();
+        
+	}
+
+}
